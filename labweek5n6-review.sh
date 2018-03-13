@@ -1,20 +1,22 @@
 #!/bin/bash -x
 #week 5 and 6 scripts
-#let's check how our systems starts with dmesg
+echo "\nlets check how our systems starts with dmesg:"
 sudo dmesg | less
-#let's check kernel logs
+echo "\nlets check kernel logs, press q to move on:"
 less /var/log/kern.log
-#let's check message logs
- less /var/log/messages
-#let's find our grub.cfg
+echo "lets check message logs"
+less /var/log/messages
+echo "\nlets find our grub.cfg:"
 locate grub.cfg
-#get into our log files
-cd var/log
+echo "get into our log files"
+cd /var/log
 ls
-#let's get the syslog  processes
+echo "lets get the syslog  processes"
 ps ax | grep syslog
-#list system list
+sleep 1
+echo "list system list"
 sudo systemctl list-units
-#identify boot slowness
+sleep 1
+echo "lets identify boot slowness"
 sudo systemd-analyze critical-chain
 #end of script

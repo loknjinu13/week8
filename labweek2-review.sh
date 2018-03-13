@@ -1,26 +1,34 @@
 #!/bin/bash -x
 # Week2lab review
+echo "The title"
 title="Week2labreview"
+sleep 1
+echo "The date of today"
 RIGHT_NOW=$(date +"%x %r %z")
+echo "creating the $MY_NAME variable"
 MY_NAME=$("whoami")
-#let's create 2 directories
-mkdir Pastor Hope Secure
-#let's change directories
-cd Pastor
-#Let's create files
-touch hi.txt lo.txt fo.txt
-#let's input your name into a file
-echo $MY_NAME >hi.txt
-# Exporting a variable into a file
-CR7=CristanoRonaldo; export CR7; echo $CR7 >lo.txt
-Z10=Zidane; export z10; echo $z10 >>lo.txt
-G11=GaryBale; export G11; echo $G11>>lo.txt
-#copy lo.txt to fo.txt
-cp lo.txt fo.txt
-#check the differences in files
-diff lo.txt hi.txt
-#let's know the running processes
-ps ax  > hi.txt
-#let's view hi.txt
-cat hi.txt 
+echo "We will create 3 directories"
+mkdir ~/Pastor ~/Hope ~/Secure
+cd ~/Pastor
+echo "\nChanging to the Pastor folder:\n"
+sleep 1
+echo "Lets create files"
+touch ~/Pastor/hi.txt ~/Pastor/lo.txt ~/Pastor/fo.txt
+echo "lets input our PC name into a file"
+echo ${MY_NAME} >~/Pastor/hi.txt
+echo "Exporting a variable into a file"
+CR7=CristanoRonaldo; export CR7; echo $CR7 >~/Pastor/lo.txt
+Z10=Zidane; export Z10; echo $Z10 >>~/Pastor/lo.txt
+G11=GaryBale; export G11; echo $G11>>~/Pastor/lo.txt
+echo "lets copy lo.txt to fo.txt"
+cp ~/Pastor/lo.txt ~/Pastor/fo.txt
+sleep 1
+echo "check the differences in files lo.txt and hi.txt"
+diff ~/Pastor/lo.txt ~/Pastor/hi.txt
+sleep 1
+echo "lets know the running processes in the computer"
+ps ax  >>~/Pastor/hi.txt
+echo "lets view hi.txt"
+cat ~/Pastor/hi.txt 
+sleep 1 
 #end script
